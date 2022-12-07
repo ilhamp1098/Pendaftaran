@@ -8,8 +8,10 @@
 </div>
 
 <form method="post" action="/dashboard/pegawai/{{$pegawai->id}}" class="mb-5" enctype="multipart/form-data">
-@method('put') 
+
 @csrf
+
+<input type="hidden" class="form-control @error('id') is-invalid @enderror" name="id" id="id"  required autofocus value="{{old('id', $pegawai->id)}}">
 <div class="col-md-6">
   <div class="mb-3">
     <label for="nama_pegawai" class="form-label">Nama Pegawai</label>

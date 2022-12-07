@@ -53,7 +53,7 @@ Route::get('/dashboard', function()
 
 Route::resource('dashboard/wilayah', WilayahController::class)->except('show')->middleware('auth');
 
-Route::resource('dashboard/pegawai', PegawaiController::class)->middleware('auth');
+// Route::resource('dashboard/pegawai', PegawaiController::class)->middleware('auth');
 
 Route::resource('dashboard/pasien', PasienController::class)->middleware('auth');
 
@@ -64,3 +64,14 @@ Route::resource('dashboard/pendaftaran', PendaftaranController::class)->middlewa
 Route::resource('dashboard/tindakan', TindakanController::class)->middleware('auth');
 
 Route::resource('dashboard/tagihan', TagihanController::class)->middleware('auth');
+
+Route::get('/dashboard/pegawai', [PegawaiController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/pegawai/create', [PegawaiController::class, 'create'])->middleware('auth');
+Route::post('/dashboard/pegawai', [PegawaiController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/pegawai/{id}', [PegawaiController::class, 'show'])->middleware('auth');
+Route::get('/dashboard/pegawai/{id}/edit', [PegawaiController::class, 'edit'])->middleware('auth');
+Route::post('/dashboard/pegawai/{id}', [PegawaiController::class, 'update'])->middleware('auth');
+Route::post('/dashboard/pegawai-delete/{id}', [PegawaiController::class, 'destroy'])->middleware('auth');
+
+Route::get('/dashboard/grafik', [PegawaiController::class, 'grafik'])->middleware('auth');
+

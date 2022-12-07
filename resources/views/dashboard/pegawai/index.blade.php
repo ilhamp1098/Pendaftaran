@@ -37,8 +37,8 @@
               <td>
               <a href="/dashboard/pegawai/{{$c->id}}" class="badge bg-info"><span data-feather="eye"></span></a>
                 <a href="/dashboard/pegawai/{{$c->id}}/edit" class="badge bg-success"><span data-feather="edit"></span></a>
-                <form action="/dashboard/pegawai/{{$c->id}}" method="post" class="d-inline">
-                  @method('delete')
+                <form action="/dashboard/pegawai-delete/{{$c->id}}" method="post" class="d-inline">
+
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
                 </form>                

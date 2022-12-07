@@ -50,6 +50,12 @@
             <a class="nav-link {{Request::is('dashboard/tagihan*') ?  'active' : ''}}" href="/dashboard/tagihan">              
               Tagihan
             </a>
+          </li>  
+          
+          <li class="nav-item">
+            <a class="nav-link {{Request::is('dashboard/grafik*') ?  'active' : ''}}" href="/dashboard/grafik">              
+              Grafik
+            </a>
           </li>            
           
         </ul> 
